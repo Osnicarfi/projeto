@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Chris Castiglione, and the One Month team">	
+		<title>Column Layout</title>
+		
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+	</head>
+
+	<body>
+	   
+   		<div class="main">
+   		  <div class="text-center">
+   		  	<h1> Manchete principal</h1>
+   		  </div>
+   			
+		  <div class="col-md-7">
+			<%= render "carousel.html.erb" %>
+		  </div>
+
+		  <div class="col-md-5">
+		  	<h1>Manchete Principal 2</h1>
+		  </div>
+		</div><!-- .main --> 
+		
+		<br><br><br>
+
+   		<div class="container">
+   		     			
+		  <div class="col-md-4">
+			<h1>Manchete Principal 3</h1>
+		  </div>
+
+		  <div class="col-md-4">
+		  	<h1>Manchete Principal 4</h1>
+		  </div>
+
+		  <div class="col-md-4">
+		  	<h1>Manchete Principal 5</h1>
+		  </div>
+		</div><!-- .container -->
+
+		
+	</body>
+</html>
