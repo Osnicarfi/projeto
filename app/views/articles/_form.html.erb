@@ -12,7 +12,7 @@
   <% end %>
 
 
-  <%= collection_select(:pin, :category_id, Category.all, :id, :name, prompt: "Selecione a Categoria") %>
+  <%= collection_select(:article, :category_id, Category.all, :id, :name, prompt: "Selecione a Categoria") %>
 
   <div class="field">
     <%= f.label :title %><br>

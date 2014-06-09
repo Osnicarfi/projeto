@@ -1,4 +1,6 @@
 Projeto::Application.routes.draw do
+  resources :categories
+
   resources :articles do
     member do
     post 'upreview'
@@ -6,7 +8,10 @@ Projeto::Application.routes.draw do
 end
 
   devise_for :users
+
   root "pages#home"
+
+  get "noticias" => "articles#noticias"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

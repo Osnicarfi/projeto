@@ -1,14 +1,20 @@
 
 <h1>Artigos</h1>
-
+<br><br><br><br>
 
     <% @articles.each do |article| %>
-      
+      <%= article.category.name  if article.category%>
+      <br>
         <h2><%= link_to article.title, article %></h2>
         <br>
+        <div class="row">
+		  <div class="col-md-8"><h4>Escrito por: <%=article.user.name%></h4></div>
+		  <div class="col-md-4">
+		  	<%= pluralize(article.reviews.count, "voto") %>
+        	<%= button_to 'VOTAR', upreview_article_path(article), method: :post %>
+		  </div>
+		</div>
         
-        <%= pluralize(article.reviews.count, "voto") %>
-        <%= button_to '+1', upreview_article_path(article), method: :post %>
         
         <%= link_to 'Editar', edit_article_path(article) %>
         <%= link_to 'Excluir', article, method: :delete, data: { confirm: 'Tem certeza?' } %>
