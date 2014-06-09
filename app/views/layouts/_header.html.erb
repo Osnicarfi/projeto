@@ -8,9 +8,16 @@
 		          <a class="navbar-brand" href="#"><i class="fa fa-code"></i> Vídeos</a>
 
 	          <ul class="nav navbar-nav pull-right">
-	            <li><a href="#"><i class="fa fa-envelope-o"></i> Login Me</a></li>
-	            <li><a href="#"><i class="fa fa-twitter"></i> Sign out</a></li>
+	          	<% if user_signed_in? %>
+		          
+		          <li><%= link_to "Editar Conta", edit_user_registration_path %></li>
+		          <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
+
+       			<% else %>
+	            <li><%= link_to "Entrar", new_user_session_path %></li>
+         		<li><%= link_to "Criar conta", new_user_registration_path %></li>  
 	          </ul>
+	          <% end %>
 
 	      </div><!-- .container --> 
 </div><!-- .navbar -->

@@ -1,5 +1,9 @@
 Projeto::Application.routes.draw do
-  resources :articles
+  resources :articles do
+    member do
+    post 'upreview'
+  end
+end
 
   devise_for :users
   root "pages#home"
