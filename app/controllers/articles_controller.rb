@@ -67,6 +67,7 @@ class ArticlesController < ApplicationController
     redirect_to(articles_path)
   end
 
+
   def noticias
     @articles = Article.all
   end
