@@ -1,4 +1,4 @@
-<%= form_for(@article) do |f| %>
+<%= form_for @article, html: { multipart: true } do |f| %>
   <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
@@ -13,6 +13,12 @@
 
 
   <%= collection_select(:article, :category_id, Category.all, :id, :name, prompt: "Selecione a Categoria") %>
+  <br><br>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
 
   <div class="field">
     <%= f.label :title %><br>

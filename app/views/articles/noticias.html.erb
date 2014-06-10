@@ -4,11 +4,14 @@
 <% @articles.each do |article| %>
       <% if article.category_id == 1 %>
       <br>
-  
+  <div class="banner">
     <div class="panel panel-default">
       <div class="panel-body">
+        
           <h2><%= link_to article.title, article %></h2>
+        
           <br>
+          <%= image_tag article.image.url(:medium) %>
             <div class="row">
               <div class="col-md-8"><h4>Escrito por: <%=article.user.name%></h4></div>
               <div class="col-md-4">
@@ -17,6 +20,7 @@
             </div> <!--row -->
       </div>
     </div>
+  </div>
  
       
     <% end %>

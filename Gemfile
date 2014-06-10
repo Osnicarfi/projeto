@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'paperclip', '~> 3.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
