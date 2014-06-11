@@ -1,0 +1,73 @@
+
+<div class="banner">   		
+<div class="row">
+
+   		   	
+
+   		   	
+	  <div class="col-md-4">
+	    <h1 class="warning">Notícias</h1>	
+	  	<% @articles.sort_by { |article| article.reviews.count }.reverse.each do |article| %>
+			  <% if article.category_id == 1 %>	
+			  	<div class="panel panel-default">
+      			  <div class="panel-body">	  	
+						<h1><%= link_to article.title, article %></h1>
+						<%= image_tag article.image.url(:medium) if article.image_updated_at%>
+					<div class="panel-footer">
+						<%= article.user.name %><br>
+						<%= pluralize(article.reviews.count, "voto") %>
+					</div>
+				  </div>
+				 </div>
+			  <% end %>
+	  	<%end%>
+	  </div>
+			  			  
+		  	
+		  	
+	  <div class="col-md-4">	
+	  	<h1 class="danger">Esporte</h1>	
+	  	<% @articles.sort_by { |article| article.reviews.count }.reverse.each do |article| %>
+			  <% if article.category_id == 2 %>		  	
+			  	<div class="panel panel-default">
+      			  <div class="panel-body">	  	
+						<h1><%= link_to article.title, article %></h1>
+						<%= image_tag article.image.url(:medium) if article.image_updated_at%>
+					<div class="panel-footer">
+						<%= article.user.name %><br>
+						<%= pluralize(article.reviews.count, "voto") %>
+					</div>
+				  </div>
+				 </div>
+			  <% end %>
+	  	<%end%>
+	  </div>
+			  
+			
+					
+					
+  	  <div class="col-md-4">	
+  	  	<h1 class="info">Entretenimento</h1>	
+	  	<% @articles.sort_by { |article| article.reviews.count }.reverse.each do |article| %>
+			  <% if article.category_id == 3 %>		  	
+			  	<div class="panel panel-default">
+      			  <div class="panel-body">	  	
+						<h1><%= link_to article.title, article %></h1>
+						<%= image_tag article.image.url(:medium) if article.image_updated_at%>
+					<div class="panel-footer">
+						<%= article.user.name %><br>
+						<%= pluralize(article.reviews.count, "voto") %>
+					</div>
+				  </div>
+				 </div>
+			  <% end %>
+	  	<%end%>
+	  </div>
+			  
+			
+		
+</div>
+</div>
+
+				  	
+

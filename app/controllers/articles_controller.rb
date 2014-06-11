@@ -64,13 +64,34 @@ class ArticlesController < ApplicationController
   def upreview
     @article = Article.find(params[:id])
     @article.reviews.create
-    redirect_to(articles_path)
+    redirect_to(:back)
+  end
+
+  def home
+    @articles = Article.all
   end
 
 
   def noticias
     @articles = Article.all
   end
+
+  def esporte
+    @articles = Article.all
+  end
+
+  def entretenimento
+    @articles = Article.all
+  end
+
+  def saude
+    @articles = Article.all
+  end
+
+  def tecnologia
+    @articles = Article.all
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

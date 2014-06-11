@@ -1,15 +1,26 @@
-<%= image_tag @article.image.url(:medium) %>
+<h2>
+<strong><%= @article.title %></strong>
+</h2> 
+<%= @article.created_at.strftime("%d %b. %Y") %>, às
+<%= @article.created_at.strftime("%H:%M") %>, <%= pluralize(@article.reviews.count, "voto") %>
+<br><br>
+
+<div class="suave"><%= image_tag @article.image.url(:medium) if @article.image_updated_at %></div>
+
 <p id="notice"><%= notice %></p>
+<br><br>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<h3>
+  <%= simple_format @article.content %>
+</h3>
 
-<p>
-  <strong>Content:</strong>
-  <%= @article.content %>
-</p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<% if @article.user == current_user %>
+ <%= link_to raw('<span class="glyphicon glyphicon-edit"></span>'), edit_article_path(@article) %> |
+ <%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span>Voltar'), :back %>
+
+<% end %>
+<hr class="divider">
+<p><strong>Gostou do que leu? Vote para este artigo tenha destaque na página principal!</strong></p>
+<li, class="votar"><%= link_to image_tag("/images/votar.png"), upreview_article_path(@article), method: :post %></li>
+<br><br>

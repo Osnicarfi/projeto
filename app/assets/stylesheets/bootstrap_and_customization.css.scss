@@ -1,3 +1,24 @@
 $btn-font-weight: bold;
-
+$navbar-default-brand-color:      #c0392b;
+$font-family-sans-serif:  'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @import 'bootstrap';
+
+.warning{
+	color: #f0ad4e;
+}
+
+.danger{
+	color: #d9534f;
+}
+
+.info{
+	color: #5bc0de;
+}
+
+.success{
+	color: #5cb85c;
+}
+
+.primary{
+	color: #428bca;
+}

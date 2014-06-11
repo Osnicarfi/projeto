@@ -1,8 +1,8 @@
-<h1 class="warning"> Notícias </h1>
+<h1 class="info">Entretenimento</h1>
 
 <div class="jumbotron">
 <% @articles.sort_by { |article| article.reviews.count }.reverse.each do |article| %>
-      <% if article.category_id == 1 %>
+      <% if article.category_id == 3 %>
       <br>
   <div class="banner">
     <div class="panel panel-default">
@@ -28,9 +28,6 @@
         </div><!--panel panel -->
     </div><!--panel body -->
   </div><!--banner -->
-      
- 
-      
-    <% end %>
+  <% end %>
     <% end %>
 </div>
