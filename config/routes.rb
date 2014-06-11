@@ -11,7 +11,7 @@ end
 
   root "articles#home"
 
-  get "noticias" => "articles#noticias"
+  get "sociedade" => "articles#sociedade"
   get "esporte" => "articles#esporte"
   get "entretenimento" => "articles#entretenimento"
   get "saude" => "articles#saude"

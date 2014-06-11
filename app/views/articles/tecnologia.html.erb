@@ -13,7 +13,7 @@
           <br>
           
             <div class="row">
-              <div class="col-md-8"><%= image_tag article.image.url(:medium) %></div>
+              <div class="col-md-8"><%= image_tag article.image.url(:medium) if article.image_updated_at%></div>
               <div class="col-md-4">
                 <h4>Escrito por: <%=article.user.name%></h4>
                 <%= pluralize(article.reviews.count, "voto") %>

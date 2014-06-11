@@ -1,13 +1,12 @@
 
 <div class="banner">   		
-<div class="row">
-
-   		   	
+  
+  <div class="row">	 
 
    		   	
 	  <div class="col-md-4">
-	    <h1 class="warning">Notícias</h1>	
-	  	<% @articles.sort_by { |article| article.reviews.count }.reverse.each do |article| %>
+	    <h1 class="warning">Sociedade</h1>	
+	  	<% @articles.sort_by { |article| article.reviews.count }.reverse.each_with_index do |article, c| %>
 			  <% if article.category_id == 1 %>	
 			  	<div class="panel panel-default">
       			  <div class="panel-body">	  	
@@ -19,6 +18,7 @@
 					</div>
 				  </div>
 				 </div>
+				 <% break if c > 6 %>
 			  <% end %>
 	  	<%end%>
 	  </div>
@@ -27,7 +27,7 @@
 		  	
 	  <div class="col-md-4">	
 	  	<h1 class="danger">Esporte</h1>	
-	  	<% @articles.sort_by { |article| article.reviews.count }.reverse.each do |article| %>
+	  	<% @articles.sort_by { |article| article.reviews.count }.reverse.each_with_index do |article, c| %>
 			  <% if article.category_id == 2 %>		  	
 			  	<div class="panel panel-default">
       			  <div class="panel-body">	  	
@@ -39,6 +39,7 @@
 					</div>
 				  </div>
 				 </div>
+				 <% break if c > 6 %>
 			  <% end %>
 	  	<%end%>
 	  </div>
@@ -48,7 +49,7 @@
 					
   	  <div class="col-md-4">	
   	  	<h1 class="info">Entretenimento</h1>	
-	  	<% @articles.sort_by { |article| article.reviews.count }.reverse.each do |article| %>
+	  	<% @articles.sort_by { |article| article.reviews.count }.reverse.each_with_index do |article, c| %>
 			  <% if article.category_id == 3 %>		  	
 			  	<div class="panel panel-default">
       			  <div class="panel-body">	  	
@@ -64,10 +65,51 @@
 	  	<%end%>
 	  </div>
 			  
-			
-		
-</div>
-</div>
+  </div><!--row-->
+
+<div class="row">
+
+	<div class="col-md-4">
+	    <h1 class="success">Saúde</h1>	
+	  	<% @articles.sort_by { |article| article.reviews.count }.reverse.each_with_index do |article, c| %>
+			  <% if article.category_id == 4 %>	
+			  	<div class="panel panel-default">
+      			  <div class="panel-body">	  	
+						<h1><%= link_to article.title, article %></h1>
+						<%= image_tag article.image.url(:medium) if article.image_updated_at%>
+					<div class="panel-footer">
+						<%= article.user.name %><br>
+						<%= pluralize(article.reviews.count, "voto") %>
+					</div>
+				  </div>
+				 </div>
+				 <% break if c > 4 %>
+			  <% end %>
+	  	<%end%>
+	  </div>
+			  			  
+		  	
+		  	
+	  <div class="col-md-4">	
+	  	<h1 class="primary">Tecnologia</h1>	
+	  	<% @articles.sort_by { |article| article.reviews.count }.reverse.each_with_index do |article, c| %>
+			  <% if article.category_id == 5 %>		  	
+			  	<div class="panel panel-default">
+      			  <div class="panel-body">	  	
+						<h1><%= link_to article.title, article %></h1>
+						<%= image_tag article.image.url(:medium) if article.image_updated_at%>
+					<div class="panel-footer">
+						<%= article.user.name %><br>
+						<%= pluralize(article.reviews.count, "voto") %>
+					</div>
+				  </div>
+				 </div>
+				 <% break if c > 6 %>
+			  <% end %>
+	  	<%end%>
+	  </div>
+
+</div><!--banner-->
 
 				  	
 

@@ -69,10 +69,11 @@ class ArticlesController < ApplicationController
 
   def home
     @articles = Article.all
+    @i = [0,1,2,3,4,5,6,7]
   end
 
 
-  def noticias
+  def sociedade
     @articles = Article.all
   end
 

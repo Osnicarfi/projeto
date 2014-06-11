@@ -1,4 +1,4 @@
-<h1 class="warning"> Notícias </h1>
+<h1 class="warning"> Sociedade </h1>
 
 <div class="jumbotron">
 <% @articles.sort_by { |article| article.reviews.count }.reverse.each do |article| %>
@@ -13,7 +13,7 @@
           <br>
           
             <div class="row">
-              <div class="col-md-8"><%= image_tag article.image.url(:medium) %></div>
+              <div class="col-md-8"><%= image_tag article.image.url(:medium) if article.image_updated_at%></div>
               <div class="col-md-4">
                 <h4>Escrito por: <%=article.user.name%></h4>
                 <%= pluralize(article.reviews.count, "voto") %>
