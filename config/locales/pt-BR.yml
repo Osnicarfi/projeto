@@ -1,0 +1,9 @@
+pt-BR: 
+  activerecord: 
+    attributes: 
+      article: 
+        content: Conteúdo
+        image: Imagem
+        titlee: Título
+    models: 
+      article: Artigo
