@@ -11,12 +11,12 @@ class CategoryController < ApplicationController
 		@category = Category.new
 	end
 
-	#def create
-    #@article = Category.new(article_params)
-     #   if @category.save
-      #      format.html { redirect_to @category, notice: 'Category was successfully created.' }
-       # end
-    #end
+	def create
+    @article = Category.new(article_params)
+        if @category.save
+            format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        end
+    end
 
 
 
