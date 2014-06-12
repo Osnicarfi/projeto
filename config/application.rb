@@ -20,9 +20,9 @@ module Projeto
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.i18n.enforce_available_locales = true
+    config.assets.initialize_on_precompile = false #required for devise
     config.i18n.default_locale = :"pt-BR"
 
-    config.assets.initialize_on_precompile = false #required for devise
+    
   end
 end
