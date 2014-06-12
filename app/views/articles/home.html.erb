@@ -109,6 +109,19 @@
 	  	<%end%>
 	  </div>
 
+	   <div class="col-md-4">
+	   	<div class="panel panel-default">
+	   		<div class="panel-heading"><h2> Recentes </h2></div>
+      		<div class="panel-body">      			
+      			<% @articles.first(9).reverse.each do |article| %>
+      			<h4><%= link_to article.title, article %></h4><br>
+      			<% end %>
+      		</div>
+      	</div>
+	   	<div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+
+	   </div>
+
 </div><!--banner-->
 
 				  	

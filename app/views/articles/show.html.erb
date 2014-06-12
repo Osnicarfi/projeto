@@ -16,11 +16,12 @@
 
 
 <% if @article.user == current_user %>
- <%= link_to raw('<span class="glyphicon glyphicon-edit"></span>'), edit_article_path(@article) %> |
- <%= link_to raw('<span class="glyphicon glyphicon-trash"></span>'), @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+ <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>'), edit_article_path(@article) %> |
+ <%= link_to raw('<span class="glyphicon glyphicon-trash"></span>'), @article, method: :delete, data: { confirm: 'Are you sure?' } %> |
+ <% end %>
  <%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span>Voltar'), :back %>
 
-<% end %>
+
 <hr class="divider">
 <p><strong>Gostou do que leu? Vote para este artigo tenha destaque na página principal!</strong></p>
 <li, class="votar"><%= link_to image_tag("/images/votar.png"), upreview_article_path(@article), method: :post %></li>

@@ -12,6 +12,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'paperclip', '~> 3.0'
 gem 'omniauth-facebook'
+gem 'will_paginate', '~> 3.0.5'
+gem 'aws-sdk', '~> 1.20.0'
 
 
 group :doc do
