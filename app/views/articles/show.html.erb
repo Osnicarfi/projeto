@@ -17,6 +17,7 @@
 
 <% if @article.user == current_user %>
  <%= link_to raw('<span class="glyphicon glyphicon-edit"></span>'), edit_article_path(@article) %> |
+ <%= link_to raw('<span class="glyphicon glyphicon-trash"></span>'), @article, method: :delete, data: { confirm: 'Are you sure?' } %>
  <%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span>Voltar'), :back %>
 
 <% end %>
