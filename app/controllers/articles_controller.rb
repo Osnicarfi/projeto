@@ -102,6 +102,11 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
+    def correct_user
+      @article = current_user.articles.find_by(id: params[:id])
+      redirect_to root_path, notice: "Não autorizado à editar este artigo" if @article.nil?
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:title, :content, :category_id, :image)
