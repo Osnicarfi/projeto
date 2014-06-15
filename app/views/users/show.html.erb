@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %> </p>
+
+<div class="jumbotron">
+	<h2><strong> <%= @user.name %> </strong></h2>
+</div>
+
+<% @articles.reverse.each do |article| %>
+
+	 <div class="col-md-4">	
+	 	<div class="panel panel-default">
+		  <div class="panel-body">	  	
+			<h1><%= link_to article.title, article %></h1>
+			<%= image_tag article.image.url(:medium) if article.image_updated_at%>
+		</div>
+	</div>
+</div>
+
+	
+<% end %>
