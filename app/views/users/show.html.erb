@@ -2,6 +2,7 @@
 
 <div class="jumbotron">
 	<h2><strong> <%= @user.name %> </strong></h2>
+	<%= image_tag @user.image.url(:medium) if @user.image_updated_at%>
 </div>
 
 <% @articles.reverse.each do |article| %>

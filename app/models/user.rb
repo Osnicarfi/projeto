@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :reviews
   has_many :articles
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
   validates :name, presence: true
 
