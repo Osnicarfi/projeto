@@ -33,6 +33,7 @@
     </div><!-- /.centro -->
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+        <li><%= link_to raw('<span class="glyphicon glyphicon-user"></span> Perfil'), user_path(@user_id) %></li>
         <li><%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>Criar Artigo'), new_article_path %></li>
         <% else %>
         <li><%= link_to image_tag("/images/face.jpg"), user_omniauth_authorize_path(:facebook) %></li>

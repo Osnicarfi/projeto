@@ -61,6 +61,7 @@
 					</div>
 				  </div>
 				 </div>
+				 <% break if c > 6 %>
 			  <% end %>
 	  	<%end%>
 	  </div>
@@ -104,7 +105,7 @@
 					</div>
 				  </div>
 				 </div>
-				 <% break if c > 6 %>
+				 <% break if c > 4 %>
 			  <% end %>
 	  	<%end%>
 	  </div>
@@ -113,7 +114,7 @@
 	   	<div class="panel panel-default">
 	   		<div class="panel-heading"><h2> Recentes </h2></div>
       		<div class="panel-body">      			
-      			<% @articles.first(9).reverse.each do |article| %>
+      			<% @articles.last(9).reverse.each do |article| %>
       			<h4><%= link_to article.title, article %></h4><br>
       			<% end %>
       		</div>
