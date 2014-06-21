@@ -1,0 +1,20 @@
+<div class="faixa">
+	<div class="centro">
+		<h1 class="color"><strong> Apresentamos a vocês o WisePeek! </strong></h1><br><br>
+		<h2 class="branco"> O WisePeek é um Portal de Notícias com o conteúdo criado totalmente pelos seus usuários! Criamos ele com o objetivo de revolucionar a maneira de como as informações são transmitidas em nossa sociedade.<br><br>
+			Você já se viu lendo sobre um determinado assunto e quis saber mais a respeito? Quis saber o que acha alguém que passou por aquilo? O que um cidadão Ucraniano comum diria sobre os recentes acontecimentos de lá?<br><br>
+			Você já se pegou com a vontade de dizer algo ao mundo, compartilhar alguma opinião ou informação, mas não encontrava meios para isso?<br><br>
+			O WisePeek foi criado para mudar isso! Com ele qualquer usuário pode escrever sobre o que quiser, e se as pessoas acharem interessante o que leram, elas poderão votar e seu artigo receberá um destaque proporcional ao número de votos!<br><br>			
+			 </h2>	
+	</div><!--centro -->
+
+		<div class="login">
+			<h3> Faça seu login agora! </h3>
+			<br>
+			<%= link_to image_tag("/images/face.jpg"), user_omniauth_authorize_path(:facebook) %>
+			<br>
+			<h2><%= link_to "Criar conta sem Facebook", new_user_registration_path %></h2>
+		</div><br>
+	
+</div>
+<hr class="divider">

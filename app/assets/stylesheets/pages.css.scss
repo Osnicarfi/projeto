@@ -21,5 +21,32 @@
 .centro {
 	width: 1100px;
 	margin: 0 auto 0 auto;
-} 
+}
 
+.faixa {
+	background-image:url('/images/show.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+}
+
+.branco {
+	 color: white;
+	 text-align: center;
+	 font-family: 'Maven Pro', sans-serif;
+}
+
+.color {
+   color: #DCAD65;
+   text-align: center;
+   font-family: 'Maven Pro', sans-serif;
+}
+.login {
+  width: 400px;
+  padding: 100px;
+  border-radius: 50px;
+  background: rgba(231,227,227,0.75);
+  padding-top: 30px;
+  height: 300px;
+  margin: 0 auto 0 auto;
+}

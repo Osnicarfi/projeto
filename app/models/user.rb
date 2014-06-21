@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :reviews
-  has_many :articles
+  has_many :articles, dependent: :destroy
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
   validates :name, presence: true

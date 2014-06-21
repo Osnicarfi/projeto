@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Projeto</title>
+  <title>WisePeek</title>
 
   <link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
   
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -35,7 +36,9 @@
 
  <%= render "layouts/header.html.erb" %>
 
+<% unless @disable_container %>
 <div class="container">
+<% end %>
 
 	<% flash.each do |name, msg| %>
      <%= content_tag(:div, msg, class: "alert alert-info") %>

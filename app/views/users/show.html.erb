@@ -1,8 +1,27 @@
 <p id="notice"><%= notice %> </p>
 
 <div class="jumbotron">
-	<h2><strong> <%= @user.name %> </strong></h2>
-	<%= image_tag @user.image.url(:medium) if @user.image_updated_at%>
+  <div class="row">
+  	<div class="col-md-4">
+		<h2><strong><i> <%= @user.name %> </i></strong></h2>
+		<% if @user.image_updated_at %>
+		  <%= image_tag @user.image.url(:medium) %>
+		<% elsif @user == current_user %>
+	      <h2 class="text-muted"> Você não pois sua foto de perfil... Clique <%=link_to "aqui", edit_user_registration_path %> e faça isso agora mesmo!</h2>
+	    <% else %>
+	  	  <h2 class="text-muted">Sem foto</h2>
+	  <% end %>
+	</div>
+  	<div class="col-md-8"><br><br>
+  	  <% if @user.description %>
+		<h8><%= @user.description %></h8>
+	  <% elsif @user == current_user %>
+	    <h2 class="text-muted"> Você ainda não escreveu usa descrição... Clique <%=link_to "aqui", edit_user_registration_path %> e faça isso agora mesmo!</h2>
+	  <% else %>
+	  	<h2 class="text-muted">Este usuário ainda não possui descrição!</h2>
+	  <% end %>
+	</div>
+  </div> <!--row -->
 </div>
 
 <% @articles.reverse.each do |article| %>

@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show, :home, :sociedade, :esporte, :entretenimento, :saude, :tecnologia]
-
+  before_filter :disable_container, only: [:home]
   # GET /articles
   # GET /articles.json
   def index
