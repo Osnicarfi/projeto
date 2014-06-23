@@ -1,3 +1,4 @@
+<footer>
 <div class="container">
 <div class="banner">
 
@@ -57,7 +58,15 @@
         </a>
       </div><!-- .carousel --> 
     </div><!-- .banner --> 
-  </div>
+  </div><br><br><br>
+      <div class="login">
+      <h3> Faça seu login agora! </h3>
+      <br>
+      <%= link_to image_tag("/images/face.jpg"), user_omniauth_authorize_path(:facebook) %>
+      <br>
+      <h2><%= link_to "Criar conta sem Facebook", new_user_registration_path %></h2>
+    </div>
+</footer>
 
 
 <hr class="divider">
