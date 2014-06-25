@@ -65,8 +65,8 @@ class ArticlesController < ApplicationController
 
   def upreview
     @article = Article.find(params[:id])
-    @article.reviews.create
-    redirect_to(:back)
+    @article.reviews.create(user: current_user)
+    redirect_to(:back, notice: 'Seu voto foi computado com sucesso! Não se esqueça que apenas é permitido um voto por artigo, se você gostou muito do artigo e quer que ele tenha mais votos compartilhe ele em seu Facebook!')
   end
 
   def home
