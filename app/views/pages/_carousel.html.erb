@@ -2,10 +2,18 @@
 <div class="visible-xs">
   <footer>
   <h3 class="black">Seja bem-vindo à versão mobile do WisePeek! Aqui vai uma breve introdução a respeito de nós.</h3>
-  <p class="black">Quantas vezes vemos pessoas reclamando da mídia em nossa sociedade? O WisePeek veio para mudar isso! Ele funciona como um portal de notícias comum, como o UOL, G1, Terra. Mas nele, o conteúdo é criado pelos próprios usuários, assim como são os usuários que votam nos artigos que acharem mais interessantes, e os artigos mais votados receberão destaque, aparecendo nas páginas principais! Venha fazer parte dessa corrente e vamos mudar o meio em que a informação é transmitida em nossa sociedade!</p>
-  </footer>
+  <p class="black">Quantas vezes vemos pessoas reclamando da mídia em nossa sociedade? O WisePeek veio para mudar isso! Ele funciona como um portal de notícias comum, como o UOL, G1, Terra. Mas nele, o conteúdo é criado pelos próprios usuários, assim como são os usuários que votam nos artigos que acharem mais interessantes, e os artigos mais votados receberão destaque, aparecendo nas páginas principais! Venha fazer parte dessa corrente e vamos mudar o meio em que a informação é transmitida em nossa sociedade!</p><br>
+  <p class="black">Ainda não entendeu muito bem como funciona o site? Clique <%= link_to "aqui", faq_path %> e veja nossa seção de dúvidas mais frequentes!</p>
+
+  <%= link_to image_tag("/images/face.jpg"), user_omniauth_authorize_path(:facebook) %>
+   </footer>
 
   <hr class="divider">
+<div class ="container">
+
+  <p class="black">Você ainda não se cadastrou, apenas usuários cadastrados têm acesso a todo conteúdo de WisePeek. <%= link_to "Cadastre-se agora", new_user_registration_path %> e comece a acompanhar suas notícias sob um outro ponto de vista! É gratuito e leva apenas 1 minuto(ou um clique, caso você se <%= link_to "cadastre pelo facebook", user_omniauth_authorize_path(:facebook) %>) e é gratuito!</p><br>
+<p class="black">Mesmo não sendo cadastrado, aqui vai uma amostra do que você vai poder ter acesso usando o WisePeek! Saboreie um de nossos artigos mais votados:</p>
+ </div>
 </div>
 
 
@@ -73,7 +81,7 @@
         </a>
       </div><!-- .carousel --> 
     </div><!-- .banner --> 
-  </div><br><br><br>
+  <br><br><br>
       <div class="login">
       <h3> Faça seu login agora! </h3>
       <br>
@@ -81,10 +89,22 @@
       <br>
       <h2><%= link_to "Criar conta sem Facebook", new_user_registration_path %></h2>
     </div>
+
+
+    <h2 class="black">Ainda não entendeu muito bem como funciona o site? Clique <%= link_to "aqui", faq_path %> e veja nossa seção de dúvidas mais frequentes!</h2>
+
+
 </footer>
 
 <hr class="divider">
+<div class="container">
 
+<h2 class="black">Você ainda não se cadastrou, apenas usuários cadastrados têm acesso a todo conteúdo de WisePeek. <%= link_to "Cadastre-se agora", new_user_registration_path %> e comece a acompanhar suas notícias sob um outro ponto de vista! É gratuito e leva apenas 1 minuto(ou um clique, caso você se <%= link_to "cadastre pelo facebook", user_omniauth_authorize_path(:facebook) %>) e é gratuito!</h2><br>
+<h2 class="black">Mesmo não sendo cadastrado, aqui vai uma amostra do que você vai poder ter acesso usando o WisePeek! Saboreie um de nossos artigos mais votados:</h2>
+
+<br>
+
+</div><!--container-->
 </div><!-- hidden-xs -->
 
 
