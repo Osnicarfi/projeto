@@ -19,6 +19,7 @@ end
   get "saude" => "articles#saude"
   get "tecnologia" => "articles#tecnologia"
   get "faq" => "pages#faq"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,40 +1,4 @@
-<% unless user_signed_in? %>
-<%= render 'pages/carousel' %>
-<div class="container">
-<div class="jumbotron">
-<% @articles.sort_by { |article| article.reviews.count }.reverse.first(1).each do |article| %>
-      <br>
-  <div class="banner">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        
-          <h2><%= link_to article.title, article %></h2>
-        
-          <br>
-          
-            <div class="row">
-              <div class="col-md-8"><%= image_tag article.image.url(:medium) if article.image_updated_at%></div>
-              <div class="col-md-4">
-                <h7><%= link_to article.user.name, article.user, style: 'color: black' %></h7><br>
-                <%= pluralize(article.reviews.count, "voto") %>
-                  <%= button_to 'VOTAR', upreview_article_path(article), method: :post %></div>             
-            </div> <!--row -->
-                    <br>
-        <% if article.user == current_user %>
-          <%= link_to raw('<span class="glyphicon glyphicon-edit"></span>'), edit_article_path(article) %> |
-          <%= link_to raw('<span class="glyphicon glyphicon-trash"></span>'), article, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-
-        </div><!--panel panel -->
-    </div><!--panel body -->
-  </div><!--banner -->
-      
- 
-      
-    <% end %>
-</div>
-</div>
-<% end %> <!--unless... -->
+<%= render 'pages/introduction' unless user_signed_in? %>
 
 
 <% if user_signed_in? %>
