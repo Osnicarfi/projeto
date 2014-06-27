@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  config.assets.precompile += [
+        'twitter/bootstrap/glyphicons-halflings.png',
+        'twitter/bootstrap/glyphicons-halflings-white.png'
+      ]
 
   def disable_container
     @disable_container = true
