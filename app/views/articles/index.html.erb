@@ -1,8 +1,14 @@
+<div class="container">
+<footer>
+<h1 class="black">Artigos em ordem cronológica</h1>
+</footer>
+</div>
 
-<h1>Artigos em ordem cronológica</h1>
-<br><br><br><br>
+<hr class="divider">
 
-    <% @articles.each do |article| %>
+<div class="container">
+
+    <% @articles.reverse.each do |article| %>
       <h2><%= article.category.name%></h2>
       <br>
   <div class="banner">
@@ -16,7 +22,7 @@
             <div class="row">
               <div class="col-md-8"><%= image_tag article.image.url(:medium) if article.image_updated_at %></div>
               <div class="col-md-4">
-                <h4>Escrito por: <%=article.user.name%></h4>
+                <h7><%= link_to article.user.name, article.user, style: 'color: black' %></h7><br>
                 <%= pluralize(article.reviews.count, "voto") %>
                   <%= button_to 'VOTAR', upreview_article_path(article), method: :post %></div>             
             </div> <!--row -->
@@ -31,7 +37,7 @@
   </div><!--banner -->
       
     <% end %>
- 
+ </div>
 
 <br>
 

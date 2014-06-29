@@ -12,7 +12,7 @@ end
   resources :users, :only => [:show], :as => :user 
 
   root "articles#home"
-
+  get "index" => "articles#index"
   get "sociedade" => "articles#sociedade"
   get "esporte" => "articles#esporte"
   get "entretenimento" => "articles#entretenimento"

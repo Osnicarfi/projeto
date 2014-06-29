@@ -3,6 +3,14 @@
 
 <% if user_signed_in? %>
 <div class="container">
+	<footer>
+		<h3 class="black">Esta é a página principal do WisePeek!
+		Aqui são exibidos os artigos que tiveram o maior destaque nos últimos dias.</h3>
+		<p class="black">Sempre que quiser acessar esta página, basta clicar no "WisePeek" na barra de navegação do site.<p>
+	</footer>
+</div>
+<hr class="divider">
+<div class="container">
 <div class="banner">   		
   
   <div class="row">	 
@@ -116,7 +124,7 @@
 
 	   <div class="col-md-4">
 	   	<div class="panel panel-default">
-	   		<div class="panel-heading"><h2> Recentes </h2></div>
+	   		<div class="panel-heading"><h2><%= link_to "Recentes", index_path, style: 'color: black' %> </h2></div>
       		<div class="panel-body">      			
       			<% @articles.last(9).reverse.each do |article| %>
       			<h4><%= link_to article.title, article %></h4><br>
