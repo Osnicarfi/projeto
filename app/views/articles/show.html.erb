@@ -23,8 +23,12 @@
 
 
 <hr class="divider">
+<footer>
 <p><strong>Gostou do que leu? Vote para este artigo tenha destaque na página principal!</strong></p>
-<%= button_to 'VOTAR', upreview_article_path(@article), method: :post %>
+<%= button_to 'VOTAR', upreview_article_path(@article), method: :post %><br><br>
+<p><strong>Já votou? Você pode ajudar este artigo a ganhar mais votos compartilhando ele em seu facebook!</strong></p>
+<div class="fb-share-button" data-href="<%= request.original_url %>" data-type="button"></div>
+</footer>
 <hr class="divider">
 
 
