@@ -9,7 +9,7 @@ end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
-  resources :users, :only => [:show], :as => :user 
+  resources :users, :only => [:show, :edit, :update], :as => :user 
 
   root "articles#home"
   get "index" => "articles#index"

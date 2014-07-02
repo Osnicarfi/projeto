@@ -1,0 +1,17 @@
+<%= form_for(@user, html: { method: :put, :multipart => true }) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :Foto_de_perfil %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <div class="form-group"> 
+    <%= f.label :Descrição %> <i>(Fale um pouco sobre você! Qualquer coisa que você ache interessante aparecer em seu perfil :))</i>
+    <%= f.text_area :description, class: "form-control", rows: "10" %>
+  </div>
+
+  <div class="form-group">
+        <%= f.submit "Atualizar", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
