@@ -7,7 +7,7 @@
 		<% if @user.image_updated_at %>
 		  <%= image_tag @user.image.url(:medium) %>
 		<% elsif @user == current_user %>
-	      <h2 class="text-muted"> Você não pois sua foto de perfil... Clique <%=link_to "aqui", edit_user_registration_path %> e faça isso agora mesmo!</h2>
+	      <h2 class="text-muted"> Você não pois sua foto de perfil... Clique <%=link_to "aqui", edit_user_path(current_user) %> e faça isso agora mesmo!</h2>
 	    <% else %>
 	  	  <h2 class="text-muted">Sem foto</h2>
 	  <% end %>
@@ -16,7 +16,7 @@
   	  <% if @user.description %>
 		<h8><%= @user.description %></h8>
 	  <% elsif @user == current_user %>
-	    <h2 class="text-muted"> Você ainda não escreveu usa descrição... Clique <%=link_to "aqui", edit_user_registration_path %> e faça isso agora mesmo!</h2>
+	    <h2 class="text-muted"> Você ainda não escreveu usa descrição... Clique <%=link_to "aqui", edit_user_path(current_user) %> e faça isso agora mesmo!</h2>
 	  <% else %>
 	  	<h2 class="text-muted">Este usuário ainda não possui descrição!</h2>
 	  <% end %>
